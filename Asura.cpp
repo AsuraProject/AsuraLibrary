@@ -1,10 +1,13 @@
 #include "Asura.h"
 #include "Wire.h"
+#include "U8g2lib.h"
 
+/* Constructor */
 Asura::Asura(){	
 }
 
-void Asura::gyroStart(){
+/* Accelerometer */
+void Asura::begin(){
 	#define MPU_addr 0x68
 	#define minVal 265
 	#define maxVal 402
@@ -16,7 +19,7 @@ void Asura::gyroStart(){
 	Wire.endTransmission(true);	
 }
 
-int Asura::gyro(char direction){
+int Asura::accel(char direction){
 	int16_t AcX,AcY,AcZ;
 	double x;
 	double y;

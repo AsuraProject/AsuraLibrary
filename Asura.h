@@ -2,12 +2,13 @@
 #define Asura_h
 
 #include <Arduino.h>
+#include <U8g2lib.h>
 
 class Asura{
 	public:
 		Asura();
-		void gyroStart();
-		int gyro(char direction);
+		void begin();
+		int accel(char direction);
 	private:
 		char _direction;
 };
